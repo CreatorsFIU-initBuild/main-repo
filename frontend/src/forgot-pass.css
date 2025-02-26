@@ -1,0 +1,61 @@
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+:root {
+    --primary-color: #081e3f;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 30rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Success Alert */
+.alert {
+    font-size: 0.9rem;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: var(--primary-color);
+    border: none;
+    font-size: 1.2rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+button[type="submit"]:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    background-color: #0c2c61;
+    box-shadow: 0px 4px 10px rgba(8, 30, 63, 0.4);
+}
+
+.is-invalid {
+    background-image: none !important;
+}

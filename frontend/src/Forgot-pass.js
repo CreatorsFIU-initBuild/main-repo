@@ -1,54 +1,44 @@
-// Selecting Form Elements
+// Selecting Elements
 const emailInput = document.getElementById("email");
 const resetBtn = document.getElementById("resetBtn");
 const form = document.getElementById("forgotPasswordForm");
 const successAlert = document.getElementById("successAlert");
+const emailGuidance = document.getElementById("emailGuidance");
 
-// Validation Regex for Email (Lowercase, No Caps, Proper Format)
+// Email Validation Regex
 const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
-// Create Guidance Message
-const createGuidance = (input, message) => {
-    let guidance = document.createElement("div");
-    guidance.className = "guidance-text text-success";
-    guidance.innerText = message;
-    guidance.style.display = "none";
-    input.insertAdjacentElement("afterend", guidance);
-    return guidance;
-};
-
-// Add Guidance Message
-const emailGuidance = createGuidance(emailInput, "Must be a valid email (e.g., name@example.com).");
-
-// Enable Button Only if Email is Valid
+// Function to Validate Email
 const validateEmail = () => {
-    emailInput.addEventListener("input", () => {
-        const value = emailInput.value.trim().toLowerCase();
-        emailInput.value = value; // Convert to lowercase automatically
+    const emailValue = emailInput.value.trim().toLowerCase();
+    emailInput.value = emailValue; // Convert to lowercase automatically
 
-        if (emailRegex.test(value)) {
-            emailInput.classList.remove("is-invalid");
-            emailGuidance.style.display = "none";
-            resetBtn.disabled = false; // ✅ Enable button when email is valid
-        } else {
-            emailInput.classList.add("is-invalid");
-            emailGuidance.style.display = "block";
-            resetBtn.disabled = true; // ❌ Keep button disabled
-        }
-    });
+    if (emailRegex.test(emailValue)) {
+        emailInput.classList.remove("is-invalid");
+        emailGuidance.classList.add("d-none");
+        resetBtn.disabled = false; // Enable button
+    } else {
+        emailInput.classList.add("is-invalid");
+        emailGuidance.classList.remove("d-none");
+        resetBtn.disabled = true; // Disable button
+    }
 };
+
+// Validate Email on Input
+emailInput.addEventListener("input", validateEmail);
 
 // Handle Form Submission
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (!resetBtn.disabled) {
-        successAlert.classList.remove("d-none"); // Show success alert
 
+    if (!resetBtn.disabled) {
+        // Show Success Alert
+        successAlert.classList.remove("d-none");
+
+        // Hide alert & redirect after 3 seconds
         setTimeout(() => {
-            window.location.href = "login.html"; // Redirect to login after 3 sec
+            successAlert.classList.add("d-none");
+            window.location.href = "login.html";
         }, 3000);
     }
 });
-
-// Run Validation
-validateEmail();

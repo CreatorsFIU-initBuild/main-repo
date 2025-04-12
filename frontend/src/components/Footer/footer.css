@@ -1,0 +1,112 @@
+.footer {
+  background-color: #111;
+  color: white;
+  padding: 2rem;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1.5rem;
+}
+
+.footer-logo img {
+  width: 200px;
+  height: auto;
+}
+
+.footer-links {
+  display: flex;
+  gap: 200px;
+  flex-wrap: wrap;
+}
+
+.footer-links div h4 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.3rem;
+}
+
+.footer-middle {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.footer-middle ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+.footer-bottom p {
+  color: grey; /* Makes the text grey */
+  font-size: 12px; /* Adjusts the font size to be slightly smaller */
+}
+
+.footer-icons {
+  display: flex; /* Arrange the icons in a horizontal row */
+  gap: 5rem; /* Add spacing between the icons */
+  justify-content: center; /* Center the icons horizontally */
+  align-items: center; /* Align the icons vertically */
+}
+
+.footer-icons img {
+  width: 40px; /* Set the width of the individual icons */
+  height: 40px; /* Ensure the height matches the width */
+  border-radius: 50%; /* Make the images circular */
+  object-fit: cover; /* Ensure the image content fits within the circular shape */
+  background-color: white; /* Set the background color to white */
+  padding: 5px; /* Add some padding to create space between the image and the border */
+}
+.footer-extra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-extra img {
+  width: 100px;
+}
+
+.footer-extra button {
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.privacy-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

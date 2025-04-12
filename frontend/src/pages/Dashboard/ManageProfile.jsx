@@ -6,7 +6,7 @@ import * as Yup from "yup";
 
 const ManageProfile = () => {
   const countryList = CountrySelect();
-  const { options, parseTimezone } = useTimezoneSelect({
+  const { options } = useTimezoneSelect({
     allTimezones,
     labelStyle: "original",
   });
@@ -376,7 +376,7 @@ const ManageProfile = () => {
               <div className="flex flex-col gap-2 w-full items-center justify-center !mt-5">
                 <button
                   type="submit"
-                  className="text-white !bg-[#0d6efd] hover:!bg-[#0b5ed7] !py-3 !px-20 cursor-pointer"
+                  className="text-white !bg-[#0d6efd] !hover:bg-[#0b5ed7] !py-3 !px-20 cursor-pointer"
                 >
                   Submit
                 </button>

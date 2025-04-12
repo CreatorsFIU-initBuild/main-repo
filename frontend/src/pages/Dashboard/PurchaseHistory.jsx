@@ -1,6 +1,6 @@
 const ProductCard = (props) => {
   return (
-    <div className="flex flex-col md:flex-row gap-8 bg-white border border-gray-300 shadow-md shadow-gray-500/50 rounded-xl overflow-hidden items-center md:items-start justify-between p-4 md:p-5">
+    <div className="flex flex-col md:flex-row gap-8 bg-white border border-gray-300 shadow-md shadow-gray-500/50 rounded-xl overflow-hidden items-center md:items-start justify-between !p-4 md:!p-5">
       <div className="flex gap-5">
         {/* Product Image */}
         <div className="relative w-28 h-28 md:w-48 md:h-48 flex-shrink-0">
@@ -22,7 +22,7 @@ const ProductCard = (props) => {
           </div>
 
           {/* Seller Info */}
-          <div className="flex my-2 items-center gap-2">
+          <div className="flex !my-2 items-center gap-2">
             <img
               src={props.sellerProfilePicture}
               alt="seller-profile-picture"
@@ -39,10 +39,10 @@ const ProductCard = (props) => {
       </div>
       <div className="flex flex-col gap-3">
         {/* Buttons */}
-        <button className="text-white bg-[#0d6efd] hover:bg-[#0b5ed7] rounded-lg py-3 px-15 cursor-pointer">
+        <button className="text-white !bg-[#0d6efd] hover:!bg-[#0b5ed7] rounded-lg !py-3 !px-15 cursor-pointer">
           Buy Again
         </button>
-        <button className="bg-gray-200 hover:bg-gray-400 hover:text-white rounded-lg py-3 px-15 cursor-pointer">
+        <button className="bg-gray-200 hover:bg-gray-400 hover:text-white rounded-lg !py-3 !px-15 cursor-pointer">
           Shop similar
         </button>
       </div>
@@ -124,22 +124,22 @@ const PurchaseHistory = () => {
           sellerProfilePicture:
             "https://a.storyblok.com/f/191576/1200x800/215e59568f/round_profil_picture_after_.webp",
           productImage:
-            "https://media1.popsugar-assets.com/files/thumbor/5lHj7Nu7jEUxVTVorqMTicG5Ovo/fit-in/1024x1024/filters:format_auto--:strip_icc--/2020/11/17/020/n/1922441/34e18eaca8f3391a_netimgNAl5QD/i/Personalized-Insulated-Water-Bottle.jpg",
+            "https://media1.popsugar-assets.com/files/thumbor/5lHj7Nu7jEUxVTVorqMTicG5Ovo/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2020/11/17/020/n/1922441/34e18eaca8f3391a_netimgNAl5QD/i/Personalized-Insulated-Water-Bottle.jpg",
         },
       ],
     },
   ];
 
   return (
-    <div className="flex-1 overflow-y-auto py-5">
-      <div className="px-6 ml-12 mt-8">
-        <h1 className="text-6xl">Your Orders</h1>
-        <p className="text-gray-500 mt-2">
+    <div className="flex-1 overflow-y-auto !py-5">
+      <div className="!px-6 !ml-12 !mt-8">
+        <h1 className="!text-6xl">Your Orders</h1>
+        <p className="text-gray-500 !mt-2">
           Check the status of recent orders, manage returens, and discover
           similar products.
         </p>
       </div>
-      <div className="px-6 ml-24 mt-12">
+      <div className="!px-6 !ml-24 !mt-12">
         <div className="flex flex-col gap-10">
           {mockData.map((order, index) => (
             <OrderDetails key={index} products={order.products} />

@@ -10,7 +10,7 @@ const ProductCard = (props) => {
   };
 
   return (
-    <div className="flex flex-col gap-1 bg-white border border-gray-300 shadow-md shadow-gray-500/50 rounded-xl overflow-hidden p-5">
+    <div className="flex flex-col gap-1 bg-white border border-gray-300 shadow-md shadow-gray-500/50 rounded-xl overflow-hidden !p-5">
       {/* Seller Info */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
@@ -19,7 +19,7 @@ const ProductCard = (props) => {
             alt="seller-profile-picture"
             className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover"
           />
-          <p className="text-gray-500 text-sm md:text-base">
+          <p className="text-gray-500 !text-sm md:!text-base">
             Sold by{" "}
             <span className="text-black underline cursor-pointer">
               {props.sellerName}
@@ -45,29 +45,31 @@ const ProductCard = (props) => {
         <div className="flex flex-col justify-between w-full h-full">
           <div className="flex flex-col sm:flex-row justify-between">
             <div className="flex flex-col gap-1.5">
-              <p className="text-lg md:text-xl font-bold">
+              <p className="!text-lg md:!text-xl font-bold">
                 {props.productName}
               </p>
-              <p className="text-xs md:text-sm text-gray-500">
+              <p className="!text-xs md:!text-sm text-gray-500">
                 Category:{" "}
                 <span className="hover:underline cursor-pointer">
                   {props.productType}
                 </span>
               </p>
-              <p className="text-xs md:text-sm text-gray-500">ETA: 2-3 days</p>
+              <p className="!text-xs md:!text-sm text-gray-500">
+                ETA: 2-3 days
+              </p>
               <div className="flex gap-2 items-center">
                 <input type="checkbox" name="isGift" id="isGift" />
-                <label className="text-xs md:text-sm" htmlFor="isGift">
+                <label className="!text-xs md:!text-sm" htmlFor="isGift">
                   This is a gift
                 </label>
               </div>
             </div>
-            <p className="text-lg md:text-xl font-bold">{props.price}</p>
+            <p className="!text-lg md:!text-xl font-bold">{props.price}</p>
           </div>
 
           {/* Quantity & Remove Button */}
-          <div className="flex gap-4 mt-3 sm:mt-12">
-            <div className="p-2 bg-white rounded-[170px] border border-[#a0a0a0] justify-around items-center flex">
+          <div className="flex gap-4 !mt-3 sm:!mt-12">
+            <div className="!p-2 bg-white rounded-[170px] border border-[#a0a0a0] justify-around items-center flex">
               <svg
                 width="14"
                 height="15"
@@ -106,13 +108,13 @@ const ProductCard = (props) => {
                 ></path>
               </svg>
             </div>
-            <button className="text-blue-600 hover:underline bg-transparent cursor-pointer border-none p-0">
+            <button className="text-blue-600 hover:underline bg-transparent cursor-pointer border-none !p-0">
               Delete
             </button>
-            <button className="text-blue-600 hover:underline bg-transparent cursor-pointer border-none p-0">
+            <button className="text-blue-600 hover:underline bg-transparent cursor-pointer border-none !p-0">
               Favorite
             </button>
-            <button className="text-blue-600 hover:underline bg-transparent cursor-pointer border-none p-0">
+            <button className="text-blue-600 hover:underline bg-transparent cursor-pointer border-none !p-0">
               Share
             </button>
           </div>
@@ -170,10 +172,10 @@ const Cart = () => {
     },
   ];
   return (
-    <div className="flex-1 overflow-y-auto py-5">
-      <div className="px-6 w-full">
-        <h1 className="text-6xl ml-12 mt-8">Shopping Cart</h1>
-        <div className="ml-24 mt-12 flex flex-col gap-5 pb-10">
+    <div className="flex-1 overflow-y-auto !py-5">
+      <div className="!px-6 w-full">
+        <h1 className="!text-6xl !ml-12 !mt-8">Shopping Cart</h1>
+        <div className="!ml-24 !mt-12 flex flex-col gap-5 !pb-10">
           {mockData.map((product, index) => (
             <ProductCard key={index} {...product} />
           ))}
@@ -186,7 +188,7 @@ const Cart = () => {
         </div>
       </div>
       <div className="flex justify-center items-center">
-        <button class="bg-[#0d6efd] hover:bg-[#0b5ed7] text-white font-semibold text-lg p-3 rounded-lg shadow-md transition duration-300 cursor-pointer">
+        <button class="bg-[#0d6efd] hover:bg-[#0b5ed7] text-white font-semibold text-lg !p-3 rounded-lg shadow-md transition duration-300 cursor-pointer">
           Proceed to Checkout
         </button>
       </div>

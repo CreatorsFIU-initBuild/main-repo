@@ -9,9 +9,9 @@ import {
 
 const Sidebar = () => {
   return (
-    <div className="p-4 flex flex-col h-full">
-      <div className="mb-6">
-        <h2 className="font-medium text-center my-6 text-3xl">John Doe</h2>
+    <div className="!p-4 flex flex-col h-full">
+      <div className="!mb-6">
+        <h2 className="font-medium text-center !my-6 text-3xl">John Doe</h2>
       </div>
 
       <nav className="flex flex-col">
@@ -71,7 +71,7 @@ const Sidebar = () => {
         </div>
       </nav>
 
-      <div className="flex flex-col gap-5 mt-auto">
+      <div className="flex flex-col gap-5 !mt-auto">
         <NavLink
           className="w-full bg-gray-400 hover:bg-gray-500 text-white rounded flex items-center justify-center cursor-pointer"
           style={{ padding: "0.5rem 1rem" }}

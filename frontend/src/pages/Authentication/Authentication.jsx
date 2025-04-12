@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import Signup from "../components/Signup/Signup";
-import SignIn from "../components/SignIn/SignIn";
-import ForgotPassword from "../components/ForgotPass/ForgotPassword";
+import Signup from "../../components/Authentication/SignUp";
+import SignIn from "../../components/Authentication/SignIn";
+import ForgotPassword from "../../components/Authentication/ForgotPassword";
 import "./authentication.css";
 
 const Authentication = () => {

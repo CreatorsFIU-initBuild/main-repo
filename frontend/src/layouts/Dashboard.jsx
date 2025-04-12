@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
-import Sidebar from "../components/Dashboard/Sidebar";
+import Sidebar from "../components/Sidebar";
 import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {

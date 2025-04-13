@@ -1,0 +1,90 @@
+/* FAQSection.css */
+.faq-container {
+  width: 100%;
+  max-width: 64rem; /* 4xl in Tailwind */
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.faq-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  border: 2px solid #dabd5c; /* amber-300 equivalent */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.faq-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1a202c; /* gray-900 equivalent */
+}
+
+.faq-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background-color: #f7fafc; /* gray-100 equivalent */
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.faq-question-button {
+  width: 100%;
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question-text {
+  font-weight: 500;
+  color: #2d3748; /* gray-800 equivalent */
+  font-size: 0.95rem; /* Slightly smaller question text */
+}
+
+.faq-icon {
+  color: #a0aec0; /* gray-400 equivalent */
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.faq-answer {
+  padding: 0 1rem 1rem 1rem;
+}
+
+.faq-answer-text {
+  color: #4a5568; /* gray-600 equivalent */
+  font-size: 0.875rem; /* Smaller answer text (14px) */
+  line-height: 1.5;
+}
+
+.faq-more {
+  text-align: right;
+  margin-top: 1.5rem;
+}
+
+.faq-more-button {
+  color: #3182ce; /* blue-600 equivalent */
+  font-weight: 500;
+  font-size: 0.875rem; /* Match smaller text size */
+}
+
+.faq-more-button:hover {
+  text-decoration: underline;
+}
+
+/* Override the font-size in the main.css isolation wrapper */
+.faq-isolation-wrapper * {
+  box-sizing: border-box;
+  font-size: inherit; /* Remove the large font size override */
+}

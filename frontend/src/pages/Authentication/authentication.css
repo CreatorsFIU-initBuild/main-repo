@@ -1,0 +1,173 @@
+@import url("../../components/Authentication/signup.css");
+
+._container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.col {
+  width: 50%;
+}
+
+.align-items-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background transition effect */
+._container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 300vw;
+  transform: translate(35%, 0);
+  background-image: linear-gradient(
+    -45deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  transition: 1s ease-in-out;
+  z-index: 6;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-bottom-right-radius: max(50vw, 50vh);
+  border-top-left-radius: max(50vw, 50vh);
+}
+
+._container.sign-in::before {
+  transform: translate(0, 0);
+  right: 50%;
+}
+
+._container.sign-up::before {
+  transform: translate(100%, 0);
+  right: 50%;
+}
+
+/* Form Transitions */
+._container.sign-in .form.sign-in {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+._container.sign-in .form.sign-up {
+  opacity: 0;
+  transform: translateX(100%);
+  pointer-events: none;
+}
+
+._container.sign-up .form.sign-in {
+  opacity: 0;
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+._container.sign-up .form.sign-up {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Text animations */
+.content-row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 6;
+  width: 100%;
+}
+
+.text {
+  margin: 4rem;
+  color: white;
+}
+
+.text h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 2rem 0;
+  transition: 1s ease-in-out;
+}
+
+.text.sign-in h2 {
+  transform: translateX(-250%);
+}
+
+.text.sign-up h2 {
+  transform: translateX(250%);
+}
+
+._container.sign-in .text.sign-in h2,
+._container.sign-up .text.sign-up h2 {
+  transform: translateX(0);
+}
+
+/* Mobile Responsiveness */
+@media only screen and (max-width: 425px) {
+  ._container::before,
+  ._container.sign-in::before,
+  ._container.sign-up::before {
+    height: 100vh;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    z-index: 0;
+    transform: none;
+    right: 0;
+  }
+
+  ._container.sign-in .col.sign-in,
+  ._container.sign-up .col.sign-up {
+    transform: translateY(0);
+  }
+
+  .content-row {
+    align-items: flex-start !important;
+  }
+
+  .content-row .col {
+    transform: translateY(0);
+    background-color: unset;
+  }
+
+  .col {
+    width: 100%;
+    position: absolute;
+    padding: 2rem;
+    background-color: var(--white);
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    transform: translateY(100%);
+    transition: 1s ease-in-out;
+  }
+
+  .row {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .form {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .text {
+    margin: 0;
+  }
+
+  .text h2 {
+    margin: 0.5rem;
+    font-size: 2rem;
+  }
+}

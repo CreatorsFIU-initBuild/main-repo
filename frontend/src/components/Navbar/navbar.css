@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&family=Roboto:wght@100..900&family=Roboto+Mono:wght@100..700&display=swap");
+
+/* Material Icons import */
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap");
+
+/* Helper to see edges of flex-boxes*/
+/* *{
+    border: 1px solid red;
+} */
+
+p {
+  font-size: 40pt;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  width: 100%;
+}
+
+body {
+  background-color: #fff;
+  margin: 0;
+}
+
+.navbar {
+  position: fixed; /* Changed from sticky to fixed */
+  top: 0;
+  left: 0;
+  z-index: 10; /*MAKES SURE THE NAV BAR STAYS ABOVE EVERYTHING ELSE*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #3c3c3c;
+  transition: background-color 0.6s ease, color 0.6s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Spacer to prevent content from being hidden under fixed navbar */
+.navbar-spacer {
+  height: 60px; /* Adjust this to match the height of your navbar */
+}
+
+/* When the navbar has scrolled */
+.navbar.scrolled {
+  background-color: #878686; /* Darker shade for the navbar */
+  /* Color can be changed */
+}
+
+.navbar.scrolled .nav-links a {
+  color: #000000; /* Change link color */
+}
+
+.categ-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding-top: 20px;
+}
+
+.categ-links {
+  display: flex;
+  gap: 20px; /* Space between items */
+  list-style: none;
+  padding: 0;
+}
+
+.categ-links li button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+  margin: 5px;
+  font-family: "Noto Sans";
+  font-size: 12px;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: color 0.3s ease;
+}
+
+.categ-links li button:hover {
+  color: rgb(156, 156, 156);
+}
+
+.categ-links i {
+  font-size: 30px;
+  padding-bottom: 2px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  border-radius: 5%;
+}
+
+.logo img:hover {
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-left: auto;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Noto sans", sans-serif;
+  transition: all ease-in-out 80ms;
+  position: relative;
+}
+
+.navbar a button {
+  margin: 0 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  color: #264a5a;
+  background-color: white;
+  font-size: 10pt;
+}
+
+.navbar a button:hover {
+  transition: ease 0.2s;
+  background-color: #c4c4c4;
+}
+
+p {
+  font-size: 10pt;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: end;
+  padding-right: 10px;
+  justify-content: flex-end;
+  margin-left: auto;
+  /* Important: Changed from 100% to auto */
+  width: auto;
+  gap: 15px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+}
+
+.icon:nth-child(1) {
+  margin-right: 10px; /* Adds space after the cart icon */
+}
+.icon:nth-child(2) {
+  margin-right: 10px;
+}
+
+.icon {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.icon:hover {
+  color: #c4c3c3;
+}
+
+/* Material Icons styling */
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 0, "GRAD" 0, "opsz" 24;
+}
+
+.icon-light {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
+}
+
+.icon-heavy {
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
+}
+
+/* Fix for root container */
+#root,
+.App {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

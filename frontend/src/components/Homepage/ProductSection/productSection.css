@@ -1,0 +1,250 @@
+/* CSS for Products Section React Component */
+
+/* Import Andika Font */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+body,
+* {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.products-deals-section {
+  position: relative;
+  min-height: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#products-section .products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the cards */
+  align-items: flex-start;
+  gap: 60px; /* Add spacing between the cards */
+  padding: 20px;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+/* Title styling */
+#products-section h2 {
+  /* Adds margin to title */
+  margin-top: 20px;
+  font-family: "Andika", serif;
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+/* Image carousel */
+.product-image-carousel {
+  position: relative;
+  width: 100%;
+  height: 250px; /* fixed height for the carousel */
+  overflow: hidden;
+  margin: 0 auto; /* Center the carousel in the card */
+  border-radius: 20px;
+}
+
+.product-image-carousel img {
+  width: 100%;
+  height: 100%;
+  display: none; /* hide all images by default */
+  object-fit: cover; /* Makes sure images cover the area without distortion */
+  border-radius: 15px; /* Match the card's rounded corners */
+}
+
+.product-image-carousel img.active {
+  display: block; /* show the active image */
+}
+
+/* Enhanced Image Carousel Arrows */
+.product-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* Hidden by default */
+}
+
+.product-prev {
+  left: 10px;
+}
+
+.product-next {
+  right: 10px;
+}
+
+/* Show arrows on hover */
+.product-image-carousel:hover .product-arrow {
+  opacity: 1;
+}
+
+.product-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.product-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Carousel indicators */
+.product-carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show indicators only when hovering over the carousel */
+.product-image-carousel:hover .product-carousel-indicators {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-indicator.active {
+  background-color: white;
+  width: 10px;
+  height: 10px;
+}
+
+.product-indicator:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Product card */
+#products-section .product-card {
+  font-family: "Andika", serif;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #9db2ba;
+  width: 270px; /* Fixed width to match the second image */
+  min-width: 270px; /* Prevent shrinking */
+  height: 350px; /* Fixed height to accommodate all content */
+  padding: 10px;
+  border-radius: 15px;
+  flex-shrink: 0; /* Prevents cards from shrinking */
+  cursor: pointer;
+  position: relative; /* allows heart icon to be positioned relative to card */
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: hidden;
+}
+
+#products-section .product-card .product-image-carousel img {
+  /* Product image styling */
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Heart icon */
+#products-section .product-card .product-heart-icon {
+  /* Sets heart icon to top right of card */
+  width: 30px;
+  height: auto;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #264a5a;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 5;
+}
+
+/* Product details */
+#products-section .product-card .product-details {
+  margin-top: 15px;
+  text-align: left;
+  width: 100%;
+  padding: 0 5px;
+  flex-grow: 1;
+}
+
+#products-section .product-card .product-details p {
+  /* Sets font size for description, bold, cut off point */
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+}
+
+#products-section .product-card .product-details h3 {
+  /* Closes gap between product image and text */
+  position: relative;
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#products-section .product-card .product-details .product-price {
+  /* Normal price style */
+  color: #000000;
+  font-weight: bold;
+  font-size: 19px;
+  margin-right: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #products-section h2 {
+    font-size: 32px;
+  }
+
+  #products-section .product-card {
+    width: 240px;
+    min-width: 240px;
+    height: 350px;
+  }
+
+  .product-image-carousel {
+    height: 220px;
+  }
+}

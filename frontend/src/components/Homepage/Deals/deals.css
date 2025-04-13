@@ -1,0 +1,276 @@
+/* CSS for Deals Section React Component */
+
+/* Import Andika Font */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+body,
+* {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.deals-section {
+  position: relative;
+  min-height: 540px;
+  width: 100%;
+  padding: 20px;
+  display: block;
+  align-items: flex-start;
+}
+
+#item1 .main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  padding: 10px 0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#item1 .main-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Title styling */
+#item1 h2 {
+  /* Adds margin to title */
+  margin-top: 20px;
+  font-family: "Andika", serif;
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+#item1 .red-deal {
+  background: linear-gradient(to right, rgb(198, 21, 21), rgb(255, 132, 0));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Hides the default text color */
+  font-weight: bold;
+}
+
+/* Image carousel */
+.image-carousel {
+  position: relative;
+  width: 100%;
+  height: 250px; /* fixed height for the carousel */
+  overflow: hidden;
+  margin: 0 auto; /* Center the carousel in the card */
+  border-radius: 20px;
+}
+
+.image-carousel img {
+  width: 100%;
+  height: 100%;
+  display: none; /* hide all images by default */
+  object-fit: cover; /* Makes sure images cover the area without distortion */
+  border-radius: 15px; /* Match the card's rounded corners */
+}
+
+.image-carousel img.active {
+  display: block; /* show the active image */
+}
+
+/* Enhanced Image Carousel Arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.3s ease;
+  opacity: 0; /* Hidden by default */
+}
+
+.prev-arrow {
+  left: 10px;
+}
+
+.next-arrow {
+  right: 10px;
+}
+
+/* Show arrows on hover */
+.image-carousel:hover .carousel-arrow {
+  opacity: 1;
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Carousel indicators - hidden by default, only shown on hover */
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show indicators only when hovering over the carousel */
+.image-carousel:hover .carousel-indicators {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background-color: white;
+  width: 10px;
+  height: 10px;
+}
+
+.indicator:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Product card */
+#item1 .main {
+  font-family: "Andika", serif;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #9db2ba;
+  width: 270px; /* Fixed width as in original */
+  height: 370px; /* Fixed height to accommodate all content */
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative; /* allows heart icon to be positioned relative to card */
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: hidden;
+}
+
+#item1 .main .image-carousel img {
+  /* Product image styling */
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Heart icon */
+#item1 .main .heartIcon {
+  /* Sets heart icon to top right of card */
+  width: 30px;
+  height: auto;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #264a5a;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 5;
+}
+
+/* Product details */
+#item1 .main .details {
+  margin-top: 15px;
+  text-align: left;
+  width: 100%;
+  padding: 0 5px;
+  flex-grow: 1;
+}
+
+#item1 .main .details p {
+  /* Sets font size for description, bold, cut off point */
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+}
+
+#item1 .main .details h3 {
+  /* Closes gap between product image and text */
+  position: relative;
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#item1 .main .details .discount-price {
+  /* Sets discount price to red, changes font size, and bolds */
+  color: rgb(198, 21, 21);
+  font-weight: bold;
+  font-size: 19px;
+  margin-right: 5px;
+}
+
+#item1 .main .details .discount-container {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 5px;
+  background-color: #48c48c;
+  border-radius: 15px;
+  margin-left: 5px;
+}
+
+#item1 .main .details .original-price {
+  /* Strikes through original price, sets color, sets font size */
+  display: block;
+  text-decoration: line-through;
+  font-size: 14px;
+  color: rgb(77, 76, 76);
+  font-weight: 100;
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #item1 h2 {
+    font-size: 32px;
+  }
+
+  #item1 .main-container {
+    grid-template-columns: 240px; /* Single column with smaller width */
+    gap: 15px;
+  }
+
+  #item1 .main {
+    width: 240px;
+    height: 350px;
+  }
+
+  .image-carousel {
+    height: 220px;
+  }
+}

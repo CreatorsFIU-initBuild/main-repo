@@ -4,7 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
-//import ErrorAlert from "../ui/ErrorAlert";
+import ErrorAlert from "../ui/ErrorAlert";
 
 const SignIn = ({ formClass, toggle, toggleForgotPassword }) => {
   const [showPassword, setShowPassword] = useState(false);

@@ -8,7 +8,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
-//import ErrorAlert from "../ui/ErrorAlert";
+import ErrorAlert from "../ui/ErrorAlert";
 
 const Signup = ({ formClass, toggle }) => {
   const [showPassword, setShowPassword] = useState(false);

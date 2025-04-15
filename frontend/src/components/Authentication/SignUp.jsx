@@ -8,7 +8,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
-//import ErrorAlert from "../ui/ErrorAlert";
+import ErrorAlert from "../ui/ErrorAlert";
 
 const Signup = ({ formClass, toggle }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -105,7 +105,7 @@ const Signup = ({ formClass, toggle }) => {
 
           return (
             <form
-              className={`form ${formClass} space-y-6`}
+              className={`form ${formClass} !space-y-6`}
               noValidate
               onSubmit={handleSubmit}
             >
@@ -128,7 +128,7 @@ const Signup = ({ formClass, toggle }) => {
                 >
                   Username <span className="text-red-500">*</span>
                 </label>
-                <div className="mt-1">
+                <div className="!mt-1">
                   <input
                     id="username"
                     name="username"
@@ -137,7 +137,7 @@ const Signup = ({ formClass, toggle }) => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     required
-                    className={`block w-full rounded-md bg-white px-3 py-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 ${
+                    className={`block w-full rounded-md bg-white !px-3 !py-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 ${
                       touched.username && errors.username
                         ? "border-red-500 outline-red-500"
                         : "focus:outline-[#B6862C]"
@@ -145,7 +145,7 @@ const Signup = ({ formClass, toggle }) => {
                     placeholder="Enter your username"
                   />
                   {touched.username && errors.username && (
-                    <p className="text-red-500 text-sm mt-1 ml-1">
+                    <p className="text-red-500 text-sm !mt-1 !ml-1">
                       {errors.username}
                     </p>
                   )}
@@ -159,7 +159,7 @@ const Signup = ({ formClass, toggle }) => {
                 >
                   Email <span className="text-red-500">*</span>
                 </label>
-                <div className="mt-1">
+                <div className="!mt-1">
                   <input
                     id="email"
                     name="email"
@@ -168,7 +168,7 @@ const Signup = ({ formClass, toggle }) => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     required
-                    className={`block w-full rounded-md bg-white px-3 py-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 ${
+                    className={`block w-full rounded-md bg-white !px-3 !py-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 ${
                       touched.email && errors.email
                         ? "border-red-500 outline-red-500"
                         : "focus:outline-[#B6862C]"
@@ -176,7 +176,7 @@ const Signup = ({ formClass, toggle }) => {
                     placeholder="Enter your email"
                   />
                   {touched.email && errors.email && (
-                    <p className="text-red-500 text-sm mt-1 ml-1">
+                    <p className="text-red-500 text-sm !mt-1 !ml-1">
                       {errors.email}
                     </p>
                   )}
@@ -190,7 +190,7 @@ const Signup = ({ formClass, toggle }) => {
                 >
                   Phone Number
                 </label>
-                <div className="flex flex-row mt-1 space-x-2">
+                <div className="flex flex-row !mt-1 !space-x-2">
                   <select className="bg-white text-gray-800 border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <option value="+1">+1</option>
                   </select>
@@ -201,7 +201,7 @@ const Signup = ({ formClass, toggle }) => {
                     value={values.phoneNumber}
                     onChange={handlePhoneNumberChange}
                     onBlur={handleBlur}
-                    className={`block w-full rounded-md bg-white px-3 py-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 ${
+                    className={`block w-full rounded-md bg-white !px-3 !py-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 ${
                       touched.phoneNumber && errors.phoneNumber
                         ? "border-red-500 outline-red-500"
                         : "focus:outline-[#B6862C]"
@@ -210,7 +210,7 @@ const Signup = ({ formClass, toggle }) => {
                   />
                 </div>
                 {touched.phoneNumber && errors.phoneNumber && (
-                  <p className="text-red-500 text-sm mt-1 ml-1">
+                  <p className="text-red-500 text-sm !mt-1 !ml-1">
                     {errors.phoneNumber}
                   </p>
                 )}
@@ -223,7 +223,7 @@ const Signup = ({ formClass, toggle }) => {
                 >
                   Password <span className="text-red-500">*</span>
                 </label>
-                <div className="mt-1 password-container">
+                <div className="!mt-1 password-container">
                   <div className="relative w-full">
                     <input
                       id="password"
@@ -233,7 +233,7 @@ const Signup = ({ formClass, toggle }) => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       required
-                      className={`block w-full rounded-md bg-white px-3 py-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 ${
+                      className={`block w-full rounded-md bg-white !px-3 !py-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 ${
                         touched.password && errors.password
                           ? "border-red-500 outline-red-500"
                           : "focus:outline-[#B6862C]"
@@ -261,7 +261,7 @@ const Signup = ({ formClass, toggle }) => {
                   </div>
 
                   {touched.password && errors.password && (
-                    <p className="text-red-500 text-sm mt-1 ml-1">
+                    <p className="text-red-500 text-sm !mt-1 !ml-1">
                       {errors.password}
                     </p>
                   )}
@@ -275,7 +275,7 @@ const Signup = ({ formClass, toggle }) => {
                 >
                   Retype Password <span className="text-red-500">*</span>
                 </label>
-                <div className="mt-1 password-container">
+                <div className="!mt-1 password-container">
                   <div className="relative w-full">
                     <input
                       id="confirmPassword"
@@ -285,7 +285,7 @@ const Signup = ({ formClass, toggle }) => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       required
-                      className={`block w-full rounded-md bg-white px-3 py-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 ${
+                      className={`block w-full rounded-md bg-white !px-3 !py-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 ${
                         touched.confirmPassword && errors.confirmPassword
                           ? "border-red-500 outline-red-500"
                           : "focus:outline-[#B6862C]"
@@ -315,7 +315,7 @@ const Signup = ({ formClass, toggle }) => {
                   </div>
 
                   {touched.confirmPassword && errors.confirmPassword && (
-                    <p className="text-red-500 text-sm mt-1 ml-1">
+                    <p className="text-red-500 text-sm !mt-1 !ml-1">
                       {errors.confirmPassword}
                     </p>
                   )}
@@ -325,13 +325,13 @@ const Signup = ({ formClass, toggle }) => {
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md px-3 py-3.5 font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2"
+                  className="flex w-full justify-center rounded-md !px-3 !py-3.5 font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2"
                   disabled={!isValid}
                 >
                   Sign Up
                 </button>
               </div>
-              <p className="mt-3 text-center">
+              <p className="!mt-3 text-center">
                 <span>Already have an account? </span>
                 <b className="text-blue-500 cursor-pointer" onClick={toggle}>
                   Sign in here

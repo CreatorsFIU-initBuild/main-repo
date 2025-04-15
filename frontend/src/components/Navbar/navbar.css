@@ -8,10 +8,6 @@
     border: 1px solid red;
 } */
 
-p {
-  font-size: 40pt;
-}
-
 .header {
   position: fixed;
   top: 0;
@@ -20,12 +16,8 @@ p {
   width: 100%;
 }
 
-body {
-  background-color: #fff;
-  margin: 0;
-}
-
 .navbar {
+  margin: 0;
   position: fixed; /* Changed from sticky to fixed */
   top: 0;
   left: 0;
@@ -38,6 +30,10 @@ body {
   transition: background-color 0.6s ease, color 0.6s ease;
   width: 100%;
   box-sizing: border-box;
+}
+
+.navbar p {
+  font-size: 10pt;
 }
 
 /* Spacer to prevent content from being hidden under fixed navbar */
@@ -144,10 +140,6 @@ body {
 .navbar a button:hover {
   transition: ease 0.2s;
   background-color: #c4c4c4;
-}
-
-p {
-  font-size: 10pt;
 }
 
 .nav-icons {

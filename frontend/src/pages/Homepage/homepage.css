@@ -2,19 +2,17 @@
 
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 
-body {
+.newsletter-reset * {
+  font-size: 15pt;
+  /* Add other resets as needed */
+  font-family: "JetBrains Mono", monospace;
+}
+
+.app-container {
   background-image: url("../../assets/hero_idea_12.png");
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
-}
-
-.newsletter-reset * {
-  font-size: 15pt;
-  /* Add other resets as needed */
-}
-
-.app-container {
   width: 100%;
   margin: 0 auto;
 }
@@ -33,6 +31,7 @@ body {
   align-items: center;
   margin-bottom: 20px;
   padding: 0 90px 0 90px; /* Left and right padding */
+  font-family: "JetBrains Mono", monospace;
 }
 
 .deals-header button {
@@ -131,6 +130,7 @@ body {
   left: 30px;
   color: rgb(255, 255, 255);
   text-shadow: 4px 4px 20px rgba(0, 0, 0, 1);
+  font-size: 2rem;
 }
 
 .split-layout {
@@ -138,12 +138,14 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 50px 100px; /* optional for spacing */
+  font-family: "JetBrains Mono", monospace;
 }
 
 .split-layout h3 {
   flex: 1;
   font-size: 2rem;
   max-width: 50%;
+  font-weight: 500;
 }
 
 .doodle-pt1 {

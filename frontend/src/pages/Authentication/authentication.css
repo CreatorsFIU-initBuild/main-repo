@@ -98,6 +98,7 @@
   font-weight: 800;
   margin: 2rem 0;
   transition: 1s ease-in-out;
+  font-family: "Poppins", sans-serif;
 }
 
 .text.sign-in h2 {

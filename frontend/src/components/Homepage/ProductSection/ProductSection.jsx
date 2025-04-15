@@ -1,5 +1,6 @@
 // ProductSection.jsx
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./productSection.css";
 import heartIcon from "../../../assets/heart.png";
 import redHeartIcon from "../../../assets/heart_filled.png";
@@ -14,6 +15,7 @@ import product4 from "../../../assets/product4.jpeg";
 const ProductCard = ({ product }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
+  const navigate = useNavigate();
 
   // Change image in the carousel
   const changeImage = (direction) => {
@@ -27,8 +29,12 @@ const ProductCard = ({ product }) => {
     setIsLiked(!isLiked);
   };
 
+  const handleCardClick = () => {
+    navigate(`/product`);
+  };
+
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={handleCardClick}>
       <div className="product-image-carousel">
         {product.images.map((image, index) => (
           <img

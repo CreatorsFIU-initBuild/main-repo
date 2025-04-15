@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./deals.css";
 import heartIcon from "../../../assets/heart.png";
 import redHeartIcon from "../../../assets/heart_filled.png";
+import { useNavigate } from "react-router-dom";
 
 import product1 from "../../../assets/product1.jpg";
 import product2 from "../../../assets/product2.jpg";
@@ -49,6 +50,11 @@ const Deals = () => {
   const ProductCard = ({ product }) => {
     const [activeImageIndex, setActiveImageIndex] = useState(0);
     const [isLiked, setIsLiked] = useState(false);
+    const navigate = useNavigate();
+    
+    const handleProductClick = () => {
+      navigate("/product");
+    };
 
     // Change image in the carousel
     const changeImage = (direction) => {
@@ -62,8 +68,9 @@ const Deals = () => {
       setIsLiked(!isLiked);
     };
 
+
     return (
-      <div className="main">
+      <div className="main" onClick={handleProductClick}>
         <div className="image-carousel">
           {product.images.map((image, index) => (
             <img

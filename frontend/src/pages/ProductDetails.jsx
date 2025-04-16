@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import profile1 from "../assets/profile1.jpg";
+import ScrollToTop from "../components/ScrollToTop";
 
 // Star Rating Component from Reviews file
 const StarRating = ({ rating }) => {
@@ -684,38 +685,41 @@ const ProductDetails = ({ productData = {} }) => {
 
   // Main Component Render
   return (
-    <div className="!px-5 max-w-6xl !mx-auto !py-6">
-      <div className="flex flex-col">
-        {/* Image section with side-by-side layout */}
-        <div className="flex flex-col md:flex-row gap-6">
-          <div className="md:w-2/3 flex flex-col">
-            {/* Product Images at the top of left column without tags */}
-            <ProductImages />
+    <>
+      <ScrollToTop />
+      <div className="!px-5 max-w-6xl !mx-auto !py-6">
+        <div className="flex flex-col">
+          {/* Image section with side-by-side layout */}
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="md:w-2/3 flex flex-col">
+              {/* Product Images at the top of left column without tags */}
+              <ProductImages />
 
-            {/* Store header below images in left column */}
-            <div className="!mt-4">
-              <StoreHeader />
+              {/* Store header below images in left column */}
+              <div className="!mt-4">
+                <StoreHeader />
+              </div>
+            </div>
+
+            <div className="md:w-1/3 flex flex-col">
+              {/* Product card in right column - now with tags above title */}
+              <div className="flex-grow">
+                <ProductCard />
+              </div>
+
+              {/* Product Description */}
+              <ProductDescription />
+
+              {/* Return Policy */}
+              <ReturnPolicy />
             </div>
           </div>
 
-          <div className="md:w-1/3 flex flex-col">
-            {/* Product card in right column - now with tags above title */}
-            <div className="flex-grow">
-              <ProductCard />
-            </div>
-
-            {/* Product Description */}
-            <ProductDescription />
-
-            {/* Return Policy */}
-            <ReturnPolicy />
-          </div>
+          {/* Reviews Section - Full width below product details */}
+          <ReviewsSection reviews={sampleReviews} productTitle={title} />
         </div>
-
-        {/* Reviews Section - Full width below product details */}
-        <ReviewsSection reviews={sampleReviews} productTitle={title} />
       </div>
-    </div>
+    </>
   );
 };
 

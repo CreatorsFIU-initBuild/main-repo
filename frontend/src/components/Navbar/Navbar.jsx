@@ -1,9 +1,11 @@
 // Navbar.js
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./navbar.css";
 import logo from "../../assets/logo2.png";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -34,13 +36,13 @@ const Navbar = () => {
             <i className="material-symbols-rounded icon-heavy">notifications</i>
           </a>
           <a href="#" className="icon">
-            <i className="material-symbols-rounded icon-heavy">favorite</i>
+            <i className="material-symbols-rounded icon-heavy" onClick={() => navigate('/dashboard/favorites')} >favorite</i>
           </a>
           <a href="#" className="icon">
-            <i className="material-symbols-rounded icon-heavy">shopping_cart</i>
+            <i className="material-symbols-rounded icon-heavy" onClick={() => navigate('/dashboard/cart')} >shopping_cart</i>
           </a>
           <a href="#" className="icon">
-            <i className="material-symbols-rounded">person</i>
+            <i className="material-symbols-rounded" onClick={() => navigate('/dashboard/profile')} >person</i>
           </a>
         </div>
       </nav>

@@ -12,12 +12,17 @@ import FAQ from "./pages/FAQ.jsx";
 import AddListing from "./pages/AddListing.jsx";
 import ProductDetails from "./pages/ProductDetails.jsx";
 import Homepage from "./pages/Homepage/Homepage.jsx";
+import CampusBestsellers from "./pages/CampusBestsellers.jsx";
 import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Homepage />,
+  },
+  {
+    path: "/campus-bestsellers",
+    element: <CampusBestsellers />,
   },
   {
     path: "/product",

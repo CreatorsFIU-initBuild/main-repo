@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Deals from "../../components/Homepage/Deals/Deals";
 import NewsLetter from "../../components/Homepage/NewsLetter/NewsLetter";
 import Footer from "../../components/Footer/Footer";
@@ -102,11 +103,16 @@ const FeaturedProductCard = ({ product }) => {
 };
 
 const Homepage = () => {
+  const navigate = useNavigate();
   const scrollToTop = () => {
     const top = document.getElementById("#");
     if (top) {
       top.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleViewMore = () => {
+    navigate("/campus-bestsellers");
   };
 
   return (
@@ -143,7 +149,7 @@ const Homepage = () => {
             <div className="bestsellers-title">
               <h2>Campus</h2>
               <h2>Bestsellers</h2>
-              <button className="view-more-btn">View More</button>
+              <button className="view-more-btn" onClick={handleViewMore}>View More</button>
             </div>
 
             <div className="featured-cards">

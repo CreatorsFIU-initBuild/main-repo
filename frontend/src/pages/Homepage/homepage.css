@@ -484,3 +484,68 @@
     padding: 0 10px;
   }
 }
+
+/* Campus Bestsellers Page Styles */
+.campus-bestsellers-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 4rem 0 2rem 0;
+  text-align: center;
+  color: #333;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.bestsellers-section {
+  margin-bottom: 3rem;
+}
+
+.bestsellers-section h2,
+.additional-products h2 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.additional-products {
+  margin-top: 3rem;
+}
+
+/* Ensure consistent styling with the ProductSection component */
+#products-section h2 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 2rem 0;
+  text-align: center;
+  color: #333;
+}
+
+.product-highlight {
+  color: #264a5a;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem 0;
+  }
+
+  .bestsellers-section h2,
+  .additional-products h2,
+  #products-section h2 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+  }
+}

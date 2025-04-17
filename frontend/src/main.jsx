@@ -5,6 +5,7 @@ import Cart from "./pages/Dashboard/Cart.jsx";
 import Favorites from "./pages/Dashboard/Favorites.jsx";
 import PurchaseHistory from "./pages/Dashboard/PurchaseHistory.jsx";
 import ManageProfile from "./pages/Dashboard/ManageProfile.jsx";
+import Notifications from "./pages/Dashboard/Notifications.jsx";
 import Dashboard from "./layouts/Dashboard.jsx";
 import Authentication from "./pages/Authentication/Authentication.jsx";
 import FAQ from "./pages/FAQ.jsx";
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
     children: [
+      {
+        path: "notifications",
+        element: <Notifications />,
+      },
       {
         path: "favorites",
         element: <Favorites />,

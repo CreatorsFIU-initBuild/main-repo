@@ -48,7 +48,7 @@ const Navbar = () => {
     <>
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className="logo">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" onClick={() => navigate('/')} />
         </div>
         <div className="nav-icons">
           <a href="#" className="icon">

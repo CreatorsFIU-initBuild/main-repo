@@ -11,7 +11,12 @@ import FAQ from "./pages/FAQ.jsx";
 import AddListing from "./pages/AddListing.jsx";
 import ProductDetails from "./pages/ProductDetails.jsx";
 import Homepage from "./pages/Homepage/Homepage.jsx";
+import ExpandDeals from "./pages/ExtendedPages/ExpandDeals.jsx";
+import ExpandBestSellers from "./pages/ExtendedPages/ExpandBestSellers.jsx";
+import ExpandNewArrivals from "./pages/ExtendedPages/ExpandNewArrivals.jsx";
+
 import "./index.css";
+
 
 const router = createBrowserRouter([
   {
@@ -33,6 +38,18 @@ const router = createBrowserRouter([
   {
     path: "/faq",
     element: <FAQ />,
+  },
+  {
+    path: "/deals",
+    element: <ExpandDeals />,
+  },
+  {
+    path: "/newarrivals",
+    element: <ExpandNewArrivals />,
+  },
+  {
+    path: "/bestsellers",
+    element: <ExpandBestSellers />,
   },
   {
     path: "/dashboard",

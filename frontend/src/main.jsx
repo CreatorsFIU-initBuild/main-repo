@@ -13,6 +13,7 @@ import AddListing from "./pages/AddListing.jsx";
 import ProductDetails from "./pages/ProductDetails.jsx";
 import Homepage from "./pages/Homepage/Homepage.jsx";
 import CampusBestsellers from "./pages/CampusBestsellers.jsx";
+import OneTimeOnlyDeals from "./pages/OneTimeOnlyDeals.jsx";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/campus-bestsellers",
     element: <CampusBestsellers />,
+  },
+  {
+    path: "/one-time-deals",
+    element: <OneTimeOnlyDeals />,
   },
   {
     path: "/product",

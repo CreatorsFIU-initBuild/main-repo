@@ -115,6 +115,10 @@ const Homepage = () => {
     navigate("/campus-bestsellers");
   };
 
+  const handleExploreDeals = () => {
+    navigate("/one-time-deals");
+  };
+
   return (
     <div id="#">
       <div className="app-container">
@@ -188,7 +192,7 @@ const Homepage = () => {
             <h3>
               One-Time-Only <strong className="dealsWord">Deals!</strong>
             </h3>
-            <button>Explore Deals</button>
+            <button onClick={handleExploreDeals}>Explore Deals</button>
           </div>
           <Deals />
         </div>

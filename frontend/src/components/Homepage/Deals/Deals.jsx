@@ -9,9 +9,9 @@ import product2 from "../../../assets/product2.jpg";
 import product3 from "../../../assets/product3.jpg";
 import product4 from "../../../assets/product4.jpeg";
 
-const Deals = () => {
-  // Product data - in a real app, this might come from an API
-  const products = [
+const Deals = ({ products: customProducts }) => {
+  // Default product data - in a real app, this might come from an API
+  const defaultProducts = [
     {
       id: 1,
       name: "Anime Glass Painting",
@@ -46,6 +46,9 @@ const Deals = () => {
     },
   ];
 
+  // Use custom products if provided, otherwise use default products
+  const products = customProducts || defaultProducts;
+
   // Product Card Component
   const ProductCard = ({ product }) => {
     const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -67,7 +70,6 @@ const Deals = () => {
     const toggleHeart = () => {
       setIsLiked(!isLiked);
     };
-
 
     return (
       <div className="main" onClick={handleProductClick}>

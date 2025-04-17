@@ -5,12 +5,17 @@ import {
   FaRegUserCircle,
   FaShoppingCart,
   FaSignOutAlt,
+  FaArrowLeft,
 } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
     <div className="!p-4 flex flex-col h-full">
       <div className="!mb-6">
+        <NavLink to="/" className="flex items-center text-white hover:text-gray-300 mb-12">
+          <FaArrowLeft className="mr-2 " />
+          <span className="text-xs">Back to Home</span>
+        </NavLink>
         <h2 className="font-medium text-center !my-6 text-3xl">John Doe</h2>
       </div>
 

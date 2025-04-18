@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Arial", sans-serif;
+  font-family: 'Arial', sans-serif;
   position: relative;
   width: 100%;
   height: 95vh;
@@ -11,7 +11,7 @@
   align-items: center;
   color: white;
   margin-bottom: 10px;
-  background-image: url("../../../assets/hero_idea_2.png");
+  background-image: url('../../../assets/hero_idea_2.png');
   background-size: cover;
   background-position: center;
   padding-left: 180px;
@@ -74,20 +74,17 @@
   border-radius: 50%;
 }
 
-
-
 .search-icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
 }
 
-.ai-button{
+.ai-button {
   padding-right: 10px;
   cursor: pointer;
 }
 
-.ai-icon{
+.ai-icon {
   width: 20px;
 }
-

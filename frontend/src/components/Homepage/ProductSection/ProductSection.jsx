@@ -93,7 +93,7 @@ const ProductCard = ({ product }) => {
   );
 };
 
-const ProductSection = ({ title, highlightText, sectionType }) => {
+const ProductSection = ({ title, highlightText, sectionType, products: customProducts }) => {
   // Product data defined within the component
   const allProducts = {
     bestSellers: [
@@ -150,8 +150,8 @@ const ProductSection = ({ title, highlightText, sectionType }) => {
     ],
   };
 
-  // Select which product array to use based on the sectionType prop
-  const products = allProducts[sectionType] || [];
+  // Use custom products if provided, otherwise use the default products
+  const products = customProducts || allProducts[sectionType] || [];
 
   return (
     <section id="products-section" className="products-deals-section">

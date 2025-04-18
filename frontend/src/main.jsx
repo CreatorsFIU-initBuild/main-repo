@@ -5,18 +5,29 @@ import Cart from "./pages/Dashboard/Cart.jsx";
 import Favorites from "./pages/Dashboard/Favorites.jsx";
 import PurchaseHistory from "./pages/Dashboard/PurchaseHistory.jsx";
 import ManageProfile from "./pages/Dashboard/ManageProfile.jsx";
+import Notifications from "./pages/Dashboard/Notifications.jsx";
 import Dashboard from "./layouts/Dashboard.jsx";
 import Authentication from "./pages/Authentication/Authentication.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import AddListing from "./pages/AddListing.jsx";
 import ProductDetails from "./pages/ProductDetails.jsx";
 import Homepage from "./pages/Homepage/Homepage.jsx";
+import CampusBestsellers from "./pages/CampusBestsellers.jsx";
+import OneTimeOnlyDeals from "./pages/OneTimeOnlyDeals.jsx";
 import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Homepage />,
+  },
+  {
+    path: "/campus-bestsellers",
+    element: <CampusBestsellers />,
+  },
+  {
+    path: "/one-time-deals",
+    element: <OneTimeOnlyDeals />,
   },
   {
     path: "/product",
@@ -38,6 +49,10 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
     children: [
+      {
+        path: "notifications",
+        element: <Notifications />,
+      },
       {
         path: "favorites",
         element: <Favorites />,

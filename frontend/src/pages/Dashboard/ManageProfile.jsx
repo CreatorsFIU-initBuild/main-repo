@@ -102,7 +102,7 @@ const ManageProfile = () => {
         <p className="text-blue-600 hover:underline text-xs cursor-pointer">
           Change profile picture
         </p>
-        <h1>Hello, John Doe</h1>
+        <h1 className="text-4xl font-bold">Hello, John Doe</h1>
         <h2 className="text-gray-800">Here, you can edit your profile</h2>
       </div>
       <Formik
